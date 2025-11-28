@@ -23,15 +23,25 @@ genereteBtn.addEventListener('click', function(){
  function rendergeneretedColor(colors){
   let colorDiv =''
   colors.forEach(function(color) {
-    console.log(color)
+    // console.log(color)
     colorDiv += `
-             <div class="colors">
-        <div class="color-img" style="background-color:${color.hex.value};"></div>
-        <div class="color-hex-value">${color.hex.value}</div>
+             <div class="color-box">
+        <div data-hex='${color.hex.value}'class="color-img color-box"style="background-color:${color.hex.value};"></div>
+        <p class="color-hex-value color-box" id="color"   data-hex='${color.hex.value}'>${color.hex.value}</p>
       </div>
     
     `
-  
+
+document.addEventListener("click", function(e) {
+  // console.log(e.target)
+  if (e.target.classList.contains("color-box")) {
+    //  console.log(e.target)
+    const text = e.target.dataset.hex
+    console.log(text)
+    navigator.clipboard.writeText(text);
+    alert("Copied to your clipboard successfully!")
+  }
+});
 
     })
   generetedColerElement.innerHTML = colorDiv
