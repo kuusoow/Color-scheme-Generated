@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>color-scheme genereted</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .container {
+        width: 550px;
+        height: 550px;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 40px auto;
+        background-color: white;
+        font-family: "Inter", sans-serif;
+      }
+      input {
+        border: 1px solid #313131;
+        width: 51px;
+        height: 34px;
+      }
+      select {
+        width: 312px;
+        height: 42px;
+        border-radius: 6px;
+        border: 1px solid #d1d5db;
+        padding: 10px;
+        font-size: 1em;
+        color: #111827;
+      }
+      button {
+        width: 123px;
+        height: 42px;
+        border: 1px solid #d1d5db;
+        border-radius: 6px;
+        background-color: white;
+      }
+      .colr-shcheme {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em;
+      }
+      .color-img {
+        width: 110px;
+        height: 420px;
+      }
+      .generated-color {
+        display: flex;
+      }
+      .color-hex-value {
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="colr-shcheme">
+        <input type="color" name="color" id="color-input" value="#F55A5A" />
+        <select id="colorType">
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">monochrome-dark</option>
+          <option value="monochrome-light">monochrome-light</option>
+          <option value="analogic">analogic</option>
+          <option value="complement">complement</option>
+          <option value="analogic-complement">analogic-complement</option>
+          <option value="triad">Triad</option>
+        </select>
+        <button id="generete-btn">Get color scheme</button>
+      </div>
+      <div class="generated-color" id="generated-color"></div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
